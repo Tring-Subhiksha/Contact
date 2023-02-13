@@ -7,8 +7,8 @@ import java.util.logging.Logger;
 class Node{
 
     Node nextNode=null;
-    public String personname;
-    public long phonenumber;
+    String personname;
+    long phonenumber;
     String emailid;
     Node(String name,long number,String email){
         this.personname= name;
@@ -18,6 +18,7 @@ class Node{
 }
 
  class LinkedList{
+      Logger l=Logger.getLogger("com.api.jar");
     Node rootNode = null;
     int count = 0;
     public void addElement(String name,long number,String email){
@@ -37,7 +38,7 @@ class Node{
     }
 
    public void insertElementatfirst(String name,long number,String email,int index){
-        Logger l=Logger.getLogger("com.api.jar");
+       
         Node n=new Node(name,number,email);
 
         if(index==0){
@@ -49,7 +50,7 @@ class Node{
     }
    public void insertElementatmiddle(String name,long number,String email,int index)
     {
-        Logger l=Logger.getLogger("com.api.jar");
+        
         Node n=new Node(name,number,email);
         l.info("Insert element at midlle or last in the linked list");
         Node curr=rootNode;
@@ -70,7 +71,7 @@ class Node{
     }
 
    public void removeElementatfirst(int index){
-        Logger l=Logger.getLogger("com.api.jar");
+        
         if(index==0){
             l.info("Delete element at beginning in the linkedlist");
             Node curr=rootNode;
@@ -81,7 +82,7 @@ class Node{
     }
     public void removeElementatmiddle(int index)
     {
-        Logger l=Logger.getLogger("com.api.jar");
+        
         l.info("Delete element at midlle or last in the linked list");
         Node curr=rootNode;
         int size=0;
@@ -101,7 +102,7 @@ class Node{
     }
     public void search(String name){
         Node curr=rootNode;
-        Logger l=Logger.getLogger("com.api.jar");
+        
         int size=0;
         while(curr!=null){
             if(curr.personname.equals(name)){
@@ -122,7 +123,7 @@ class Node{
     public void printElements(){
         Node temp = rootNode;
 
-        Logger l=Logger.getLogger("com.api.jar");
+        
         if(temp == null){
             l.info("Is empty!");
         }
